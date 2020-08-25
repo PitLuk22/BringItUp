@@ -38,25 +38,29 @@ export default class MainSlider extends Slider {
     }
 
     render() {
-        // get popup card
         try {
-            this.hanson = document.querySelector('.hanson');
+
+            // get popup card
+            try {
+                this.hanson = document.querySelector('.hanson');
+            } catch (e) {}
+
+            this.btns.forEach(btn => {
+
+                btn.addEventListener('click', () => {
+                    this.plusSlide(1);
+                });
+
+                // click on logo and set first slide
+                btn.parentElement.previousElementSibling.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    this.slideIndex = 1;
+                    this.showSlide(this.slideIndex);
+                });
+            });
+
+            this.showSlide(this.slideIndex);
+
         } catch (e) {}
-
-        this.btns.forEach(btn => {
-
-            btn.addEventListener('click', () => {
-                this.plusSlide(1);
-            });
-
-            // click on logo and set first slide
-            btn.parentElement.previousElementSibling.addEventListener('click', (event) => {
-                event.preventDefault();
-                this.slideIndex = 1;
-                this.showSlide(this.slideIndex);
-            });
-        });
-
-        this.showSlide(this.slideIndex);
     }
 }

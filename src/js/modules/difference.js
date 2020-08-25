@@ -1,11 +1,15 @@
 export default class Difference {
     constructor(oldOfficer, newOfficer, items) {
-        this.oldOfficer = document.querySelector(oldOfficer);
-        this.newOfficer = document.querySelector(newOfficer);
-        this.oldItems = this.oldOfficer.querySelectorAll(items);
-        this.newItems = this.newOfficer.querySelectorAll(items);
-        this.oldCounter = 0;
-        this.newCounter = 0;
+        try {
+
+            this.oldOfficer = document.querySelector(oldOfficer);
+            this.newOfficer = document.querySelector(newOfficer);
+            this.oldItems = this.oldOfficer.querySelectorAll(items);
+            this.newItems = this.newOfficer.querySelectorAll(items);
+            this.oldCounter = 0;
+            this.newCounter = 0;
+
+        } catch (e) {}
     }
 
     hideItems(items) {
@@ -19,13 +23,16 @@ export default class Difference {
     }
 
     init() {
+        try {
 
-        this.hideItems(this.oldItems);
-        this.hideItems(this.newItems);
+            this.hideItems(this.oldItems);
+            this.hideItems(this.newItems);
 
-        // Here we pass the plus, counter and array of elements inside the group
-        this.bindTriggers(this.oldOfficer.querySelector('.plus'), this.oldCounter, this.oldItems);
-        this.bindTriggers(this.newOfficer.querySelector('.plus'), this.newCounter, this.newItems);
+            // Here we pass the plus, counter and array of elements inside the group
+            this.bindTriggers(this.oldOfficer.querySelector('.plus'), this.oldCounter, this.oldItems);
+            this.bindTriggers(this.newOfficer.querySelector('.plus'), this.newCounter, this.newItems);
+
+        } catch (e) {}
     }
 
     bindTriggers(plus, count, items) {

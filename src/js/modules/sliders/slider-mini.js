@@ -6,19 +6,23 @@ export default class MiniSlider extends Slider {
     }
 
     init() {
-        this.container.style.cssText = `
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start; 
-        overflow: hidden;
-        `;
+        try {
 
-        this.bindTriggers();
-        this.decorateSLides();
+            this.container.style.cssText = `
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start; 
+                overflow: hidden;
+            `;
 
-        if (this.autoplay) {
-            this.initAutoPlay();
-        }
+            this.bindTriggers();
+            this.decorateSLides();
+
+            if (this.autoplay) {
+                this.initAutoPlay();
+            }
+
+        } catch (e) {}
     }
     //card__description
     //card__controls
