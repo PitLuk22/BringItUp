@@ -1,20 +1,32 @@
+import Difference from './modules/difference';
+import Form from './modules/form';
 import MainSlider from './modules/sliders/slider-main';
 import MiniSlider from './modules/sliders/slider-mini';
 import VideoPlayer from './modules/videoPlayer';
-import Difference from './modules/difference';
-import Form from './modules/form';
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    const player = new VideoPlayer('.showup .play', '.overlay');
-    player.init();
+    new VideoPlayer('.showup .play', '.overlay').init();
+    new VideoPlayer('.moduleapp .play', '.overlay').init();
 
     const slider = new MainSlider({
         container: '.page',
-        btns: '.next',
-        svg: '.next svg path'
+        btns: '.next'
     });
     slider.render();
+
+    const modulePageSlider = new MainSlider({
+        container: '.moduleapp',
+        btns: '.next'
+    });
+    modulePageSlider.render();
+
+    const moduleApp = new MainSlider({
+        container: '.moduleapp',
+        prev: '.module__info-controls .prev',
+        next: '.module__info-controls .next'
+    });
+    moduleApp.render();
 
     const showUpSlider = new MiniSlider({
         container: '.showup__content-slider',

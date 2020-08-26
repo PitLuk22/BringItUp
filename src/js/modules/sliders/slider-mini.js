@@ -43,7 +43,7 @@ export default class MiniSlider extends Slider {
     }
 
     bindTriggers() {
-        this.next.addEventListener('click', (e) => {
+        this.next[0].addEventListener('click', (e) => {
             for (let i = 1; i < this.slides.length; i++) {
                 if (this.slides[i].tagName === 'BUTTON') {
                     this.container.appendChild(this.slides[i]);
@@ -57,7 +57,7 @@ export default class MiniSlider extends Slider {
             }
         });
 
-        this.prev.addEventListener('click', (e) => {
+        this.prev[0].addEventListener('click', (e) => {
             for (let i = this.slides.length - 1; i > 0; i--) {
                 if (this.slides[i].tagName === 'BUTTON') {
                     this.container.prepend(this.slides[i]);
@@ -76,13 +76,13 @@ export default class MiniSlider extends Slider {
             this.next.click();
         }, 4000);
 
-        [this.container, this.next, this.prev].forEach(elem => {
+        [this.container, this.next[0], this.prev[0]].forEach(elem => {
             elem.addEventListener('mouseenter', () => {
                 clearInterval(this.timerId);
             });
         });
 
-        [this.container, this.next, this.prev].forEach(elem => {
+        [this.container, this.next[0], this.prev[0]].forEach(elem => {
             elem.addEventListener('mouseleave', () => {
                 this.timerId = setInterval(() => {
                     this.next.click();

@@ -4,7 +4,6 @@ export default class Slider {
         btns = null,
         next = null,
         prev = null,
-        svg = null,
         activeClass = '',
         animateActiveElem,
         autoplay
@@ -14,9 +13,8 @@ export default class Slider {
             this.slides = this.container.children;
         } catch (e) {}
         this.btns = document.querySelectorAll(btns);
-        this.svg = document.querySelectorAll(svg);
-        this.prev = document.querySelector(prev);
-        this.next = document.querySelector(next);
+        this.prev = document.querySelectorAll(prev);
+        this.next = document.querySelectorAll(next);
         this.activeClass = activeClass;
         this.animateActiveElem = animateActiveElem;
         this.autoplay = autoplay;
