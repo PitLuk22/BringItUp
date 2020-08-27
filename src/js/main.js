@@ -3,6 +3,8 @@ import Form from './modules/form';
 import MainSlider from './modules/sliders/slider-main';
 import MiniSlider from './modules/sliders/slider-mini';
 import VideoPlayer from './modules/videoPlayer';
+import ShowInfo from './modules/showInfo';
+import Download from './modules/download';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -57,5 +59,9 @@ window.addEventListener('DOMContentLoaded', () => {
     new Difference('.officerold', '.officernew', '.officer__card-item').init();
 
     new Form('form', 'assets/question.php').init();
+
+    new ShowInfo('.module__info-show').init();
+
+    new Download('.download').init();
 
 });

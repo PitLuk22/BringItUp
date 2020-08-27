@@ -32,8 +32,10 @@ export default class Difference {
             this.bindTriggers(this.oldOfficer.querySelector('.plus'), this.oldCounter, this.oldItems);
             this.bindTriggers(this.newOfficer.querySelector('.plus'), this.newCounter, this.newItems);
 
+
         } catch (e) {}
     }
+
 
     bindTriggers(plus, count, items) {
 

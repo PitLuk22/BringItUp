@@ -292,6 +292,39 @@ a:active {
     cursor: pointer
 }
 
+.overlay__form {
+    display: none;
+}
+
+
+.module__info-controls .next:hover,
+.module__info-controls .prev:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+}
+
+
+.overlay__form .overlay__form-dialog {
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    line-height: 38px;
+    padding: 10px;
+}
+
+.overlay__form-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
 .showup {
     position: relative;
     height: 100vh;
@@ -1040,6 +1073,10 @@ a:active {
     opacity: 1
 }
 
+.join__evolution .form__block div select option {
+    color: #000;
+}
+
 .showup__next:hover,
 .showup__prev:hover {
     border: 2px solid #9ec73d;
@@ -1238,7 +1275,7 @@ a:active {
     position: relative;
     height: 100vh;
     padding-top: 100px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .feed .title {
@@ -1938,7 +1975,12 @@ a:active {
     padding: 15px 18px 17px 18px;
     display: flex;
     justify-content: center;
-    height: 48px
+    height: 48px;
+    cursor: pointer;
+}
+
+.module__info-book .download:hover {
+    background-color: rgba(0, 0, 0, .07);
 }
 
 .module__info-book .download svg {
