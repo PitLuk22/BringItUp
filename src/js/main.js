@@ -5,6 +5,7 @@ import MiniSlider from './modules/sliders/slider-mini';
 import VideoPlayer from './modules/videoPlayer';
 import ShowInfo from './modules/showInfo';
 import Download from './modules/download';
+import MultiPage from './modules/multiPage';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -63,5 +64,8 @@ window.addEventListener('DOMContentLoaded', () => {
     new ShowInfo('.module__info-show').init();
 
     new Download('.download').init();
+
+    new MultiPage('http://localhost:4000/', 'http://localhost:4000/modules.html').init();
+
 
 });

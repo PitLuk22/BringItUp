@@ -140,7 +140,8 @@ a:active {
 
 .menu__block-schedule {
     color: #fff;
-    background-color: #9ec73d
+    background-color: #9ec73d;
+    z-index: 1000;
 }
 
 .sidecontrol {
